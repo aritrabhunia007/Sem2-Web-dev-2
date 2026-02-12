@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="header-title">
+                <span class="header-icon">📅</span>
+                <h1>Smart Event Dashboard</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="dashboard-grid">
+            <!-- Form Section -->
+            <div class="form-section">
+                <div class="form-card">
+                    <h2 class="form-heading">Add New Event</h2>
+
+                    <form id="eventForm" class="event-form">
+                        <div class="form-group">
+                            <label for="eventTitle">Event Title:</label>
+                            <input
+                                type="text"
+                                id="eventTitle"
+                                name="title"
+                                placeholder=""
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDate">Event Date:</label>
+                            <input
+                                type="date"
+                                id="eventDate"
+                                name="date"
+                                placeholder="dd/mm/yyyy"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventType">Category:</label>
+                            <select id="eventType" name="type">
+                                <option value="conference">Conference</option>
+                                <option value="webinar">Webinar</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="meeting">Meeting</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDescription">Description:</label>
+                            <textarea
+                                id="eventDescription"
+                                name="description"
+                                placeholder=""
+                                rows="4"
+                            ></textarea>
+                        </div>
+
+                        <input type="hidden" id="eventTime" name="time" value="10:00" />
+                        <input type="hidden" id="eventLocation" name="location" value="Online" />
+                        <input type="hidden" id="eventAttendees" name="attendees" value="0" />
+
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            Add Event
+                        </button>
+
+                        <button type="button" class="btn btn-secondary hidden" id="cancelBtn">
+                            Cancel Edit
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Events Section -->
+            <div class="events-section">
+                <div class="events-card">
+                    <h2 class="events-heading">My Events</h2>
+                    
+                    <div class="events-controls">
+                        <button class="btn btn-control" id="clearBtn">Clear All Events</button>
+                        <button class="btn btn-control btn-control-secondary" id="sampleBtn">Add Sample Events</button>
+                    </div>
+
+                    <!-- Event Cards Container -->
+                    <div class="events-container" id="eventsContainer">
+                        <div class="empty-state">
+                            <p>No events yet. Add your first event!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOM Manipulation Demo Section -->
+        <div class="dom-demo-section">
+            <div class="demo-card">
+                <h2 class="demo-heading">DOM Manipulation Demo</h2>
+                <div class="demo-content">
+                    <p>You Pressed: <strong id="pressedKey">Shift</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
